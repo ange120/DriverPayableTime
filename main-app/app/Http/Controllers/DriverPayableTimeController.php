@@ -57,7 +57,7 @@ class DriverPayableTimeController extends Controller
                 $totalTime += ($time['dropoff'] - $time['pickup']);
             }
 
-            $uniqueDriverPayableTimes[$driver_id] = round($totalTime / 3600);
+            $uniqueDriverPayableTimes[$driver_id] = round($totalTime / 3600, 2);
         }
 
         return response()->json($uniqueDriverPayableTimes);

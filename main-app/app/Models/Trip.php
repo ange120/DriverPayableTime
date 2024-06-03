@@ -11,8 +11,6 @@ class Trip extends Model
     protected $casts = [
       'id' => 'integer',
       'driver_id' => 'integer',
-      'pickup' => 'datetime',
-      'dropoff' => 'datetime',
       'created_at' => 'datetime',
       'updated_at' => 'datetime',
     ];

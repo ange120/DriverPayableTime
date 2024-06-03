@@ -23,7 +23,10 @@ $(document).ready(function() {
         $('#tripsTable thead').append('<tr><th>ID</th><th>Driver ID</th><th>Pickup</th><th>Dropoff</th></tr>');
 
         Object.values(lists).forEach(function(trip) {
-            $('#tripsTable tbody').append('<tr><td>' + trip.id + '</td><td>' + trip.driver_id + '</td><td>' + trip.pickup + '</td><td>' + trip.dropoff + '</td></tr>');
+            let pickupFormatted = moment(trip.pickup).format('YYYY-MM-DD HH:mm:ss');
+            let dropoffFormatted = moment(trip.dropoff).format('YYYY-MM-DD HH:mm:ss');
+
+            $('#tripsTable tbody').append('<tr><td>' + trip.id + '</td><td>' + trip.driver_id + '</td><td>' + pickupFormatted + '</td><td>' + dropoffFormatted + '</td></tr>');
         });
 
         $('#tripsTable').DataTable({
